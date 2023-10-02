@@ -1,0 +1,188 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url("tom-winckels-I7oLRdM9YIw-unsplash.jpg");
+    object-fit: cover;
+    background-size: cover;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: min(800px, 100%);
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.add-task {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.container .add-task textarea {
+    outline: none;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    width: min(700px, 90%);
+    font-weight: bolder;
+    font-size: 16px;
+    resize: none;
+}
+
+.container .add-task textarea::placeholder {
+    transition: .4s;
+    font-size: 15px;
+}
+
+.container .add-task textarea:hover::placeholder {
+    opacity: 0;
+}
+
+.container .add-task textarea:focus::placeholder {
+    opacity: 0;
+}
+
+.container .add-task input[type="submit"] {
+    outline: none;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-weight: bolder;
+    color: white;
+    background: brown;
+    cursor: pointer;
+    margin-top: 10px;
+    margin: auto;
+}
+
+.container .add-task input[type="submit"]:hover {
+    background-color: rgb(190, 26, 26);
+}
+
+.container .show-task .task {
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.container .show-task .task::after {
+    content: '';
+    background: linear-gradient(to right, #2b54b636, #cbcbcb33);
+    width: 0;
+    height: 220%;
+    position: absolute;
+    z-index: -1;
+    border-radius: 0;
+    transition: .7s;
+}
+
+.container .show-task .task:hover::after {
+    width: 100%;
+}
+
+
+@media (max-width: 600px) {
+    .container .show-task .task {
+        flex-wrap: wrap;
+    }
+}
+
+.task-content {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.task-content input {
+    accent-color: rgb(17, 17, 218);
+    width: 44px;
+    height: 20px;
+}
+
+.task-content input:checked+span {
+    text-decoration: line-through;
+    text-decoration-color: black;
+    text-decoration-thickness: 3px;
+}
+
+.task-content span {
+    font-weight: bolder;
+    font-size: 17px;
+}
+
+.show-task i {
+    font-size: 25px;
+    cursor: pointer;
+    transition: .4s;
+    margin: 7px;
+}
+
+.show-task i:first-of-type:hover {
+    color: rgb(9, 141, 186);
+}
+
+.show-task i:last-of-type:hover {
+    color: brown;
+}
+
+@media (max-width: 600px) {
+    .icon {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.info {
+    padding: 10px 1rem;
+    border-top: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.info button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    background-color: brown;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.info button:hover {
+    background-color: rgb(208, 21, 21);
+}
+
+.info p {
+    font-weight: bolder;
+}
